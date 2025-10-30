@@ -1,47 +1,41 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div class="container">
+    <header class="p-5 mb-4 mt-4 bg-light rounded-3">
+      <h1>My tasks</h1>
+      <p>
+        You have <span></span> pending tasks.
+      </p>
+    </header>
+    <div class="form">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Descrição da tarefa">
+        </div>
+        <div class="col-md-1">
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+        <div class="col-md-2">
+          <select class="form-control">
+            <option value="all">All tasks</option>
+            <option value="pending">Pending tasks</option>
+            <option value="finished">Finished tasks</option>
+            </select>
+        </div>
+      </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <ul class="list-group mt-4">
+      <li class="list-group-item">
+        <input type="checkbox">
+        <label class="ms-3" for="">
+          Estudar ES6+
+        </label>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
